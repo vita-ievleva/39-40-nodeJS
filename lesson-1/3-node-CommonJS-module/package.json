@@ -1,0 +1,13 @@
+{
+  "name": "3-node-CommonJS-module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "../4-node-module-es6-mjs/index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
