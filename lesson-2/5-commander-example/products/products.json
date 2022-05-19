@@ -1,0 +1,32 @@
+[
+  {
+    "id": "48bd1cd8-72ca-42cc-8457-156bb8c30873",
+    "name": "cheese",
+    "price": 2.5
+  },
+  {
+    "id": "61c0169c-e693-4a20-af3e-2e55fdc34f79",
+    "name": "Crisps",
+    "price": 4
+  },
+  {
+    "id": "2c9c3d67-07b3-4ee1-a59f-67d54427d3c3",
+    "name": "Pizza",
+    "price": 4
+  },
+  {
+    "id": "2386a63f-140a-494c-b4e5-b23a219bbac0",
+    "name": "Chocolate",
+    "price": 1.5
+  },
+  {
+    "id": "8263b539-c546-4a64-866d-97d58e42c585",
+    "name": "Self-raising flour",
+    "price": 1.5
+  },
+  {
+    "id": "cf050c0e-3bac-4a51-9557-58e4b7fe3359",
+    "price": 4300,
+    "name": "mango"
+  }
+]
