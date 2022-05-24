@@ -1,0 +1,52 @@
+[
+  {
+    "id": "48bd1cd8-72ca-42cc-8457-156bb8c30873",
+    "name": "cheese",
+    "price": 2.5
+  },
+  {
+    "id": "61c0169c-e693-4a20-af3e-2e55fdc34f79",
+    "name": "Crisps",
+    "price": 4
+  },
+  {
+    "id": "2c9c3d67-07b3-4ee1-a59f-67d54427d3c3",
+    "name": "Pizza",
+    "price": 4
+  },
+  {
+    "id": "2386a63f-140a-494c-b4e5-b23a219bbac0",
+    "name": "Chocolate",
+    "price": 1.5
+  },
+  {
+    "id": "036fd694-a1f9-456e-ab01-691771701dee",
+    "price": 333,
+    "name": "mango"
+  },
+  {
+    "id": "d21f3319-dc6c-4f27-9b28-0322417d15fd",
+    "price": 333,
+    "name": "mango"
+  },
+  {
+    "id": "ea5b4ce1-375b-484e-b4d5-10d046a279d4",
+    "price": 333,
+    "name": "mango"
+  },
+  {
+    "id": "f4bf369d-afe3-4139-90b0-0c9f2e33921e",
+    "price": 333,
+    "name": "mango"
+  },
+  {
+    "id": "95ac207b-3faf-4a26-b3c8-f861cdd9cae5",
+    "price": 333,
+    "name": "mango"
+  },
+  {
+    "id": "8a11cb81-dfdd-4425-af88-3d19a9d0052c",
+    "price": 23,
+    "name": "waffle"
+  }
+]
