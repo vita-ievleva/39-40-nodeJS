@@ -26,7 +26,6 @@ const create = async (price, name) => {
     allProducts.push(newProduct);
 
     await fs.writeFile(productPath, JSON.stringify(allProducts, null, 2));
-
     return newProduct;
 }
 
