@@ -1,9 +1,7 @@
 const express = require('express');
 const cors = require('cors');
-const productsRouter = require('./routes/api/products');
 const logger = require('morgan');
-
-require('dotenv').config();
+const productsRouter = require('./routes/api/products');
 
 const app = express();
 
@@ -15,7 +13,7 @@ app.use(logger(process.env.NODE_ENV === 'dev' ? 'dev' : 'tiny'));
 app.use('/api/v1/products', productsRouter);
 
 app.use((req, res, next) => {
-    res.status(404).json({ message: "Not Found" });
+    next({status: 404, message: "Not Found"});
 });
 
 app.use((err, req, res, next) => {
