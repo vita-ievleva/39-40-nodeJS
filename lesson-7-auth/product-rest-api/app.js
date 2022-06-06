@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const logger = require('morgan');
 const productsRouter = require('./routes/api/products');
+const authRouter = require('./routes/api/auth');
 
 const app = express();
 
@@ -10,6 +11,7 @@ app.use(express.json());
 app.use(logger(process.env.NODE_ENV === 'dev' ? 'dev' : 'tiny'));
 
 
+app.use('/api/auth', authRouter);
 app.use('/api/v1/products', productsRouter);
 
 app.use((req, res, next) => {
