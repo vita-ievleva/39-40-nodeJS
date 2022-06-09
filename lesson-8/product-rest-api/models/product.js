@@ -22,6 +22,11 @@ const schema = new Schema({
     price: {
         type: Number,
         required: true,
+    },
+    createdBy: {
+        ref: 'user',
+        type: Schema.Types.ObjectId,
+        required: true,
     }
 });
 
@@ -31,6 +36,13 @@ const schemaCreate = Joi.object({
     code: Joi.string().pattern(codeRegex).required(),
     available: Joi.bool(),
 });
+
+const schemaUpdate = Joi.object({
+    price: Joi.number().min(0).required(),
+    name: Joi.string().min(3).required(),
+    available: Joi.bool(),
+});
+
 const schemaPatch = Joi.object({
     available: Joi.bool().required(),
 });
@@ -40,6 +52,6 @@ const Product = model('product', schema);
 
 
 module.exports = {
-    Product, schemaCreate, schemaPatch
+    Product, schemaCreate, schemaPatch, schemaUpdate,
 }
 

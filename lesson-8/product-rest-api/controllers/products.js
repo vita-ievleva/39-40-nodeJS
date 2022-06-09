@@ -3,8 +3,8 @@ const {createError} = require("../helpers/errors");
 
 const getAll = async (req, res, next) => {
     try {
-       //  req.query   ?name=kiwi
-        const all = await products.getAll();
+        // req.query   ?available=true
+        const all = await products.getAll(req.query);
         email.sendEmail();
         res.json(all);
     } catch (e) {
@@ -27,7 +27,8 @@ const getById = async (req, res, next) => {
 
 const create = async (req, res, next) => {
     try {
-        const product = await products.create(req.body);
+        const {_id} = req.user;
+        const product = await products.create(req.body, _id);
         res.status(201).json(product);
     } catch (e) {
         if(e.message.includes('duplicate')){
