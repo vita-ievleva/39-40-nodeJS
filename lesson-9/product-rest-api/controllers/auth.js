@@ -8,7 +8,8 @@ const registerUser = async (req, res, next) => {
             name: user.name,
             email: user.email,
             role: user.role,
-            id: user._id
+            id: user._id,
+            avatarURL: user.avatarURL,
         });
     } catch (e) {
         next(e);

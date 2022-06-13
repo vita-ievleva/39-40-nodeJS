@@ -1,5 +1,5 @@
 const express = require('express');
-const {registerUser, loginUser, logoutUser} = require('../../controllers/auth');
+const {registerUser, loginUser, logoutUser} = require('../../controllers');
 const router = express.Router();
 const {schemaRegister, schemaLogin} = require('../../models/user');
 const {validateRequest} = require('../../middlewares/validateRequest');

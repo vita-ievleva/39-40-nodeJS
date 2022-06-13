@@ -1,5 +1,5 @@
 const express = require('express');
-const {getAll, getById, create, updateById, deleteById, updateAvailability} = require('../../controllers/products');
+const {getAll, getById, create, updateById, deleteById, updateAvailability} = require('../../controllers');
 const router = express.Router();
 const {schemaPatch, schemaCreate, schemaUpdate} = require('../../models/product');
 const {validateId,validateRequest, auth, author} = require('../../middlewares');
