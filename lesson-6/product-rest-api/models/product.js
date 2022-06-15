@@ -25,14 +25,12 @@ const schema = new Schema({
     }
 });
 
-
 const schemaCreate = Joi.object({
     price: Joi.number().min(0).required(),
     name: Joi.string().min(3).required(),
     code: Joi.string().pattern(codeRegex).required(),
     available: Joi.bool(),
 });
-
 const schemaPatch = Joi.object({
     available: Joi.bool().required(),
 });

@@ -7,7 +7,7 @@
 
 const fizzbuzz = (number) => {
     if (number < 0) {
-        throw new Error('Number should be > 0')
+        throw new Error('Number should be >= 0')
     }
     if (typeof number !== 'number') {
         throw new Error(`Argument should be a number, but was ${typeof number}`);
@@ -25,14 +25,11 @@ const fizzbuzz = (number) => {
             result.push("Buzz");
             console.log("Buzz");
         } else {
-            result.push(i);
+            result.push(''+i);
             console.log('' + i);
         }
     }
     return result;
 }
-
-
-fizzbuzz(5)
 
 module.exports = fizzbuzz;

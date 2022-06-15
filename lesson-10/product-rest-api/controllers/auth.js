@@ -1,31 +1,37 @@
 const authService = require('../services/auth.service');
 
 
-const registerUser = async (req, res, next) => {
+const register = async (req, res, next) => {
     try {
         const user = await authService.registerUser(req.body);
-        res.status(201).json({
-            name: user.name,
-            email: user.email,
-            role: user.role,
-            id: user._id,
-            avatarURL: user.avatarURL,
+        return res.status(201).json({
+            code: 201,
+            data: {
+                name: user.name,
+                email: user.email,
+                role: user.role,
+                id: user._id,
+                avatarURL: user.avatarURL,
+            }
         });
     } catch (e) {
         next(e);
     }
 }
 
-const loginUser = async (req, res, next) => {
+const login = async (req, res, next) => {
     try {
         const token = await authService.loginUser(req.body);
-        res.json(token);
+        return res.json({
+            code: 200,
+            data: token,
+        });
     } catch (e) {
         next(e);
     }
 }
 
-const logoutUser = async (req, res, next) => {
+const logout = async (req, res, next) => {
     try {
         await authService.logoutUser(req.user._id);
         res.sendStatus(204);
@@ -35,5 +41,5 @@ const logoutUser = async (req, res, next) => {
 }
 
 module.exports = {
-    registerUser, loginUser, logoutUser
+    register, login, logout,
 }
