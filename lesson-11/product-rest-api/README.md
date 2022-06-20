@@ -1,11 +1,25 @@
-## Lesson 10
+## Lesson 11
 
-Added Unit test for Login and Register controllers 
+Send email to new User to confirm the email
+
+``
+registration
+``
+
+1) Update User model
+2) Update Registration flow
+- Add step to send email
+
+3) Create service to send email via SendGrid
+
+``
+new route GET /verify/:code
+``
+1) add route
+2) update User => verify: true, and verification code - null
 
 
-Steps:
-1. Add devDependency jest
-2. Add test file for auth.js => auth.test.js
-3. Isolate testable function by using mocks/stubs
-4. Add test script to package.json `jest --coverage`
-
+``
+login
+``
+Add verification that user confirm email

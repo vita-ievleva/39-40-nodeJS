@@ -1,6 +1,8 @@
 const authController = require('./auth');
 const authService = require('../services/auth.service');
-const {log} = require("sharp/lib/libvips");
+const emailService = require('../services/email.service');
+
+
 
 describe('Auth Controller', () => {
     beforeAll(() => {
@@ -15,6 +17,7 @@ describe('Auth Controller', () => {
         test('New User should register with email', async () => {
             let next = jest.fn();
             authService.registerUser = jest.fn((data) => data);
+            emailService.sendEmail = jest.fn();
             const req = {
                 body: {
                     name: "UserName",
@@ -33,6 +36,7 @@ describe('Auth Controller', () => {
             expect(result.data.email).toBe('email@gmail.com');
             expect(result.data.password).toBeUndefined();
             expect(next).toBeCalledTimes(0);
+            expect(emailService.sendEmail).toBeCalledTimes(1);
         })
         test('Old User should not be able to register again', async () => {
             let next = jest.fn();
