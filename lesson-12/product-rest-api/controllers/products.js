@@ -1,11 +1,10 @@
-const {products, email} = require("../services");
+const {products} = require("../services");
 const {createError} = require("../helpers/errors");
 
 const getAll = async (req, res, next) => {
     try {
         // req.query   ?available=true
         const all = await products.getAll(req.query);
-        email.sendEmail();
         res.json(all);
     } catch (e) {
         next(e);

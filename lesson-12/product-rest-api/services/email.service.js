@@ -25,41 +25,40 @@ let transporter = nodemailer.createTransport({
 const sendEmail = async (userEmail, code)  => {
     const link = `${BASE_URL}/auth/verify/${code}`
     // NODEMAILER
-    try {
-        await transporter.sendMail(
-            {
-                to: userEmail,
-                from: '*****@gmail.com', // can be stored in envs
-                subject: 'Confirm your email',
-                html: `<h4>Click on this link to confirm registration ${link}</h4>`,
-            }
-        );
-
-    } catch (e) {
-        console.log(e);
-        throw e;
-    }
+    // try {
+    //     await transporter.sendMail(
+    //         {
+    //             to: userEmail,
+    //             from: '*****@gmail.com', // can be stored in envs
+    //             subject: 'Confirm your email',
+    //             html: `<h4>Click on this link to confirm registration ${link}</h4>`,
+    //         }
+    //     );
+    //
+    // } catch (e) {
+    //     console.log(e);
+    //     throw e;
+    // }
 
 
     // SENDGRID
-    // sgMail.setApiKey(SEND_GRID_API_KEY);
-    // const link = `${BASE_URL}/auth/verify/${code}`
-    //
-    // const msg = {
-    //     to: userEmail,
-    //     from: '*****@gmail.com',
-    //     subject: 'Confirm your email',
-    //     html: `<h4>Click on this link to confirm registration ${link}</h4>`,
-    // }
-    //
-    // try {
-    //     const result = await sgMail.send(msg);
-    //     console.log('result', result);
-    //
-    // } catch (e) {
-    //     console.log('ERROR', e);
-    //     throw e;
-    // }
+    sgMail.setApiKey(SEND_GRID_API_KEY);
+
+    const msg = {
+        to: userEmail,
+        from: '*****@gmail.com',
+        subject: 'Confirm your email',
+        html: `<h4>Click on this link to confirm registration ${link}</h4>`,
+    }
+
+    try {
+        const result = await sgMail.send(msg);
+        console.log('result', result);
+
+    } catch (e) {
+        console.log('ERROR', e);
+        throw e;
+    }
 
 }
 

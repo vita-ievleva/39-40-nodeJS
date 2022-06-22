@@ -4,7 +4,7 @@ const {PORT, DB_HOST} = require('./helpers/env');
 
 
 mongoose.connect(DB_HOST).then(() => {
-    console.log('DB is working');
+    console.log(`DB is working ${DB_HOST}`);
     app.listen(PORT);
 }).then(() => {
     console.log(`Server is on ${PORT}`);

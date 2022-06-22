@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  database:
+    image: mongo
+    ports:
+      - "27017:27017"
+  goit-rest-api:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - database
