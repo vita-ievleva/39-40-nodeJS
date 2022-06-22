@@ -11,14 +11,14 @@
 
     const CHAR_RETURN = 13;
 
-    const socket = new WebSocket('ws://127.0.0.1:8080');
+    const socket = new WebSocket('ws://localhost:8080');
     const chat = document.getElementById('chat');
     const msg = document.getElementById('msg');
     msg.focus();
 
     const writeLine = (text) => {
         const line = document.createElement('div');
-        line.innerHTML = <p>${text}</p>;
+        line.innerHTML =`<p>${text}</p>`;
         chat.appendChild(line);
     };
 
